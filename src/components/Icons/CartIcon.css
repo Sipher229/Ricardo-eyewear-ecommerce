@@ -1,0 +1,8 @@
+#cart-icon{
+    position: relative;
+}
+#cart-icon p{
+    position: absolute;
+    top: -50%;
+    left: 65%;
+}

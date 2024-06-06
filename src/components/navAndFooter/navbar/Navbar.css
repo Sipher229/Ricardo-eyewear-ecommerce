@@ -1,0 +1,59 @@
+header{
+    position: absolute;
+    top: 0px;
+}
+#link-wrapper div{
+    width: 100%;
+    transform: scaleX(0);
+    height: .5px;
+    background-color: #000;
+    transform-origin: top left;
+}
+
+#link-wrapper:hover div{
+    transform: scaleX(1);
+    transition: all 0.3s ease-in;
+}
+
+#cartContainer{
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    width: 28rem;
+    height: 40rem;
+    animation: showcart .3s ease-in-out alternate forwards;
+    transform-origin: top right;
+}
+/* #cartContainer:has(.hide-cart:active){
+    animation: hideCart .3s ease-in-out forwards;
+} */
+.hide-cart{
+    animation: showcart .3s ease-in-out reverse forwards;
+}
+
+.show-cart{
+    animation: showcart .3s ease-in-out forwards;
+}
+
+
+@keyframes showcart {
+    0% {
+        transform: scaleX(0);
+    }
+
+    100% {
+        transform: scaleX(1);
+    }
+
+}
+@keyframes hideCart {
+    to {
+        transform: scaleX(0);
+    }
+/* 
+    100% {
+        transform: scaleX(0);
+    } */
+
+}
+

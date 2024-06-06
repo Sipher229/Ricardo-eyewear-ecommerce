@@ -1,0 +1,13 @@
+#homeHero{
+    background-image: url("../../assets/eyewear_e-commerce/eyeglasses_white-bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#beDifferent{
+    background-image: url("../../assets/eyewear_e-commerce/eyeglasses_blue-bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
