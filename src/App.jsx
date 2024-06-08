@@ -14,7 +14,7 @@ function App() {
     <>
       <div id='appWrapper' className='w-full h-full'>
           <Navbar showCart = {showCart} handleShowCart={handleShowCart}/>
-          <div id='mainContainer' className={`flex flex-col ${showCart ? 'brightness-50' : ''}`}>
+          <div id='mainContainer' className={`flex flex-col ${showCart ? 'brightness-50' : ''}`} onClick = {() => setShowCart(false)}>
               <Outlet />
           </div>
         <Footer />

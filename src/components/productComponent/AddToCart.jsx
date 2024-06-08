@@ -1,13 +1,28 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react"
+import { useDispatch } from "react-redux"
+import { addTocart } from "../../store/features/cartslice/cartslice"
 
-function AddToCart() {
+
+function AddToCart({src = "", price =99.99, productName ="Some Name", rating = "⭐⭐⭐⭐", id= 1, count = 1}) {
   const [added, setAdded] = useState(false)
+  const dispatch = useDispatch()
 
-  const handleClick = (e) => {
+
+  const handleClick =  () => {
       setAdded(true)
+      dispatch(addTocart({
+        id: id,
+        productName: productName,
+        count: count,
+        imageSrc: src,
+        rating: rating,
+        price: price
+      }))
       setTimeout(() => {
         setAdded(false)
       }, 400);
+      
   }
   return (
     <>

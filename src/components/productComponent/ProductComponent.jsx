@@ -4,12 +4,12 @@ import AddToCart from "./AddToCart"
 
 
 
-function ProductComponent({src = "", price ="$99.99", productName ="Some Name", rating = "⭐⭐⭐⭐" }) {
+function ProductComponent({src = "", price =99.99, productName ="Some Name", rating = "⭐⭐⭐⭐", id= 1, count = 1 }) {
   return (
     <>
         <div className="flex flex-col h-[27rem] justify-center gap-5 relative" >
 
-            <AddToCart />
+            <AddToCart src={src} price={price} productName={productName} rating={rating} id={id} count={count} />
 
             <img src={src} className="w-96 h-80 " />
 

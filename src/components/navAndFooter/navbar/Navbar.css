@@ -2,6 +2,7 @@ header{
     position: absolute;
     top: 0px;
 }
+
 #link-wrapper div{
     width: 100%;
     transform: scaleX(0);

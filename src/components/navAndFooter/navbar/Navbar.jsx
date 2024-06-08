@@ -4,16 +4,20 @@ import {NavLink} from "react-router-dom"
 import "./Navbar.css"
 import CartIcon from "../../Icons/CartIcon"
 import { useEffect } from "react"
-import CartItem from "./cartItem/CartItem"
+import { useSelector } from 'react-redux'
 import CartContainer from "./CartContainer"
 
 function Navbar({showCart = false, handleShowCart}) {
+    const {totalPrice} = useSelector((state) => state.cart)
   useEffect(() =>{
+
     if(showCart){
         document.body.style.overflow = "hidden"
     } else{ 
         document.body.style.overflow = "auto"
     }
+
+
   }, [showCart])
   return (
     <>
@@ -31,7 +35,7 @@ function Navbar({showCart = false, handleShowCart}) {
                     <p className="roboto-light text-gray-500">Eye Wear</p>
                 </div>
                 <div id="far-right" className="w-2/5 h-full flex justify-center items-end gap-8">
-                    <p id="cartAmount">$0.00</p>
+                    <p id="cartAmount" className="font-sans font-semibold" >{`$${totalPrice.toFixed(2)}`}</p>
                     <CartIcon handleClick={handleShowCart} />
                     <button href="#" className="roboto-regular text-xl">Login</button>
                     <button href="#" className="roboto-regular text-xl">Register</button>

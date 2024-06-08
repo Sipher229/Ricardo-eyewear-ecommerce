@@ -1,11 +1,14 @@
 /* eslint-disable react/prop-types */
 
+import {useSelector} from "react-redux"
 import CartItem from "./cartItem/CartItem"
 
 function CartContainer({showCart= false, handleShowCart}) {
+    const {items } = useSelector((state) => state.cart)
+
   return (
     <>
-        <div id="cartContainer" className={` bg-white border-2 ${showCart? '' : 'hidden'}`}>
+        <div id="cartContainer" className={` bg-white border-2 ${showCart? '' : 'hidden'}` }  >
 
             <div className="h-9 w-full flex justify-between border-b px-3">
                 <p className="font-semibold text-xl">Shopping Cart</p>
@@ -17,9 +20,13 @@ function CartContainer({showCart= false, handleShowCart}) {
                 </button>   
 
             </div>
-            <div className="flex justify-center items-center w-full min-h-[30rem] px-3">
+            <div className="flex flex-col justify-center items-center w-full min-h-[30rem] px-3 gap-2">
                 {/* <h1>No items in the Shopping cart</h1> */}
-                <CartItem />
+                {
+                    items.map((item) => {
+                       return <CartItem key={item.id} imgSrc={item.imageSrc} price={item.price} countNum={item.count} id = {item.id}/>
+                    })
+                }
 
             </div>
             <div className="flex flex-col justify-center gap-3 w-full h-1/6 px-3">

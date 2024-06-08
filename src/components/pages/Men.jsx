@@ -10,7 +10,7 @@ function Men() {
 
         </div>
 
-        <div className="h-96 w-full bg-white p-11">
+        <div className="h-80 w-full bg-white p-11">
           <h1 className="text-8xl font-serif font-black">Men</h1>
           
         </div>
@@ -29,8 +29,8 @@ function Men() {
           </div>
           <div id="allProducts" className="h-5/6 w-full p-11 flex flex-wrap jutify-between gap-5 ">
             {
-              productArray.map((prod, index) => {
-                return <ProductComponent src={prod} key={index} /> 
+              productArray.map((prod) => {
+                return <ProductComponent src={prod.imageSrc} key={prod.id} price = {prod.price}  rating={prod.rating} productName={prod.productName} id={prod.id} count={prod.count} /> 
               })
             }
           </div>

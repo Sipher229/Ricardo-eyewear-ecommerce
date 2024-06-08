@@ -2,7 +2,7 @@ import eyeglasses_person from "../../assets/eyewear_e-commerce/eyeglasses_person
 import glasses_many from "../../assets/eyewear_e-commerce/glass_many.jpg"
 import eyeglassesPerson from "../../assets/eyewear_e-commerce/eyeglasses_person2.jpg"
 import featuredGlasses from "../../assets/eyewear_e-commerce/glasses-1.png"
-import {productItem1, productItem2, productItem3, productItem4} from "../../assets/eyewear_e-commerce/index.js"
+import  { productArray } from "../../assets/eyewear_e-commerce/products.js"
 
 import "./Home.css"
 import ProductComponent from "../productComponent/ProductComponent"
@@ -115,9 +115,11 @@ function Home() {
       </div>
 
       <div className="flex justify-center flex-wrap w-full gap-4">
-        <ProductComponent src={productItem1} productName="Product Name" price="$120.99" rating="⭐⭐⭐" />
-        <ProductComponent src={productItem2} productName="Product Name" price="$120.99" rating="⭐⭐⭐" />
-        <ProductComponent src={productItem3} productName="Product Name" price="$120.99" rating="⭐⭐⭐" />
+        {
+          productArray.slice(4).map((item) => {
+            return <ProductComponent key= {item.id} src={item.imageSrc} price={item.price} count={item.count} id={item.id} rating={item.rating} productName={item.productName} />
+          })
+        }
 
       </div>
       </div>
