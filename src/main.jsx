@@ -10,6 +10,7 @@ import Men from './components/pages/Men.jsx'
 import Women from './components/pages/Women.jsx'
 import { store } from './store/store.js'
 import { Provider } from 'react-redux'
+import AddProducts from './components/pages/AddProducts.jsx'
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "/women",
         element: <Women />
+      },
+      {
+        path: '/addproducts',
+        element: <AddProducts />
       }
     ]
   },
